@@ -1,16 +1,27 @@
-class LoginPage {
-  // Selector
-  KolomUsername = '[data-test="username"]';
-  KolomPassword = '[data-test="password"]';
-  tombolLogin   = '[data-test="login-button"]';
+// cypress/support/objectModel/LoginPage.js
 
-  // Method login
+class LoginPage {
+  visit() {
+    cy.visit('/login'); // ganti sesuai URL login-mu
+  }
+
+  fillUsername(username) {
+    cy.get('[data-test="username"]').type(username);
+  }
+
+  fillPassword(password) {
+    cy.get('[data-test="password"]').type(password);
+  }
+
+  submit() {
+    cy.get('[data-test="login-button"]').click();
+  }
+
   login(username, password) {
-    cy.get(this.KolomUsername).type(username);
-    cy.get(this.KolomPassword).type(password);
-    cy.get(this.tombolLogin).click();
+    this.fillUsername(username);
+    this.fillPassword(password);
+    this.submit();
   }
 }
 
 export default LoginPage;
-

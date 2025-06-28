@@ -1,3 +1,5 @@
+import LoginPage from "../support/objectModel/LoginPage";
+
 describe('Login Page with Fixtures', () => {
   it('Login dengan data dari fixture', () => {
     cy.visit('/');

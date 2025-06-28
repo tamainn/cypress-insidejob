@@ -27,16 +27,16 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-node-
 
+      - name: Clear npm cache (opsional tapi direkomendasikan untuk debug)
+        run: npm cache clean --force
+
       - name: Install dependencies
         run: npm ci
 
-      - name: Debug check-more-types
+      - name: Debug check-more-types (opsional untuk cek dependensi)
         run: ls -la node_modules/check-more-types || echo "check-more-types tidak ditemukan"
 
-      - name: Fix Cypress binary permissions
-        run: chmod +x node_modules/.bin/cypress
-
-      - name: Verify Cypress installation
+      - name: Verifikasi instalasi Cypress
         run: npx cypress verify
 
       - name: Jalankan tes Cypress

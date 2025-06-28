@@ -1,4 +1,5 @@
-import LoginPage from "../support/objectModel/objectModel/LoginPage";
+import LoginPage from "../support/objectModel/LoginPage";
+
 
 describe('Fitur Login', () => {
   const loginPage = new LoginPage(); 

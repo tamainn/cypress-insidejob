@@ -2,9 +2,9 @@ name: Jalankan Tes Cypress
 
 on:
   push:
-    branches: [ main ]
+    branches: [main]
   pull_request:
-    branches: [ main ]
+    branches: [main]
 
 jobs:
   cypress-run:
@@ -14,7 +14,7 @@ jobs:
       - name: Checkout kode
         uses: actions/checkout@v3
 
-      - name: Setup Node.js
+      - name: Install Node.js
         uses: actions/setup-node@v3
         with:
           node-version: 18
@@ -22,7 +22,5 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Jalankan Tes Cypress
-        uses: cypress-io/github-action@v6
-        with:
-          browser: chrome
+      - name: Jalankan tes Cypress
+        run: npx cypress run

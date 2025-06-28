@@ -14,3 +14,5 @@
 // ***********************************************************
 
 // Import commands.js using ES2015 syntax:
+import './commands';
+console.log(' Custom commands loaded');

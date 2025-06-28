@@ -1,9 +1,13 @@
-import LoginPage from "../support/objectModel/LoginPage";
+import LoginPage from "../../support/objectModel/LoginPage";
 
-describe('Login Page with Fixtures', () => {
-  it('Login dengan data dari fixture', () => {
+
+
+describe('Login Page Test', () => {
+  it('Login with valid credentials', () => {
+    const loginPage = new LoginPage();
+
     cy.visit('/');
-    cy.login('standard_user', 'secret_sauce'); // custom command
+    loginPage.login('standard_user', 'secret_sauce');
     cy.url().should('include', '/inventory.html');
   });
 });

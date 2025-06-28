@@ -1,0 +1,9 @@
+{
+  "compilerOptions": {
+    "baseUrl": "./cypress",
+    "paths": {
+      "@/*": ["./*"]
+    }
+  },
+  "include": ["cypress"]
+}
